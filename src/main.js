@@ -3,7 +3,11 @@ let decorator = false
 setInterval(() => {
     const date = new Date()
     let hour = 24 - date.getHours()
-    let minutes = 59 - date.getMinutes()
+    let minutes = 60 - date.getMinutes()
+    if (minutes == 60) {
+        hour++
+        minutes = 0
+    }
     if (hour.toString().length == 1) hour = `0${hour.toString()}`
     if (hour.toString().length == 0) hour = `00`
     if (minutes.toString().length == 1) minutes = `0${minutes.toString()}`
